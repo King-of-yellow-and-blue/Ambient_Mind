@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: #0D0D1A; 
+  color: #FFFFFF;
+}
+
+.glass { 
+  backdrop-filter: blur(20px); 
+  background: rgba(19, 19, 42, 0.8); 
+  border: 1px solid rgba(108, 99, 255, 0.2); 
+}
+
+.glow { 
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.3); 
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0D0D1A; }
+::-webkit-scrollbar-thumb { 
+  background: linear-gradient(#6C63FF, #00D4AA);
+  border-radius: 3px;
+}
+
+/* Selection color */
+::selection { 
+  background: rgba(108,99,255,0.4);
+  color: white;
+}
+
+/* Premium glow utilities */
+.glow-primary { box-shadow: 0 0 30px rgba(108,99,255,0.5); }
+.glow-secondary { box-shadow: 0 0 30px rgba(0,212,170,0.5); }
+.glow-danger { box-shadow: 0 0 30px rgba(255,77,109,0.5); }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #6C63FF, #00D4AA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Noise texture overlay */
+.noise::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Custom cursor — desktop only */
+@media (pointer: fine) {
+  * { cursor: none !important; }
+  #custom-cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: #6C63FF;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transition: transform 0.1s ease;
+    mix-blend-mode: screen;
+  }
+  #cursor-follower {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(108,99,255,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transition: all 0.15s ease;
+  }
+}
+
+/* Hide custom cursor on touch devices (Android app, phones) */
+@media (pointer: coarse) {
+  * { cursor: auto !important; }
+  #custom-cursor, #cursor-follower { display: none !important; }
+}
+
+/* ─── Mobile / Android responsive overrides ─── */
+@media (max-width: 767px) {
+  /* Remove sidebar margin, add bottom tab bar padding */
+  .ml-64 { margin-left: 0 !important; }
+  main { padding-bottom: 80px !important; }
+  
+  /* Make content full width */
+  .max-w-5xl, .max-w-4xl { max-width: 100% !important; }
+  
+  /* Tighter padding on mobile */
+  .p-8 { padding: 16px !important; }
+}

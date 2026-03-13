@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AmbientMind</string>
+    <string name="title_activity_main">AmbientMind</string>
+    <string name="package_name">com.ambientmind.app</string>
+    <string name="custom_url_scheme">com.ambientmind.app</string>
+</resources>
