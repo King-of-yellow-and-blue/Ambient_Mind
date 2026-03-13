@@ -1,0 +1,66 @@
+﻿
+> frontend@0.0.0 build
+> vite build
+
+npm : [33mYou are using 
+Node.js 20.18.0. Vite 
+requires Node.js version 
+20.19+ or 22.12+. Please 
+upgrade your Node.js 
+version.[39m
+At line:1 char:1
++ npm run build 2>&1 | 
+Out-File -Encoding utf8 
+build_log.txt
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (  
+  [33mYou are us...s ve   
+ rsion.[39m:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[33m[vite:css][postcss] 
+@import must precede all 
+other statements (besides 
+@charset or empty @layer)
+3  |  @tailwind utilities;
+4  |  
+5  |  @import url('https:/
+/fonts.googleapis.com/css2
+?family=Inter:wght@400;500
+;600;700&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+6  |  
+7  |  body { [39m
+[32m✓[39m 3964 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                 [39m[1m[2m    0.42 kB[22m[1m[22m[2m │ gzip:   0.29 kB[22m
+[2mdist/[22m[35massets/index-DWLoJwdt.css  [39m[1m[2m   33.91 kB[22m[1m[22m[2m │ gzip:   6.65 kB[22m
+[2mdist/[22m[36massets/index-CS-7UxrS.js   [39m[1m[33m2,027.80 kB[39m[22m[2m │ gzip: 587.15 kB[22m
+[33m
+(!) Some chunks are 
+larger than 500 kB after 
+minification. Consider:
+- Using dynamic import() 
+to code-split the 
+application
+- Use build.rollupOptions.
+output.manualChunks to 
+improve chunking: https://
+rollupjs.org/configuration
+-options/#output-manualchu
+nks
+- Adjust chunk size limit 
+for this warning via build
+.chunkSizeWarningLimit.[3
+9m
+[32m✓ built in 40.78s[39m
